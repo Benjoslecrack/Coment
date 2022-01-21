@@ -1,0 +1,810 @@
+//VARIABLES
+@white: white;
+@violet : #B721FF;
+@blue:#21D4FD;
+@darkblue : #6880FE;
+@neon:#fa25cb;
+@green:#61ceb7;
+
+
+//BASE
+
+body{
+    overflow-x: hidden;
+}
+
+.container{
+    width: 70%;
+}
+h1{
+    color: @white;
+    font-size: 1.4em;
+}
+h2{
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+h4{
+    padding-bottom: 20px;
+    color: #888;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @white;
+    &:hover{
+        color: white;
+    }
+}
+p{
+    color: #444;
+    line-height: 1.5em;
+    font-size: 17px;
+}
+
+//FONCTION DE STYLE
+
+.page-button-style(){
+    width: 300px;
+    height: 55px;
+    background-color: @neon;
+    box-shadow: #555 0 0 4px 1px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    margin-top: 50px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color:#e71dbb;
+        transition: all 0.3s;
+        z-index: -1;
+    }
+    &:hover{
+        color: @white;
+
+        &:before{
+            width: 100%;
+        }
+    }
+}
+
+.bggradient{
+    background-color: #21D4FD;
+    background-image: linear-gradient(35deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.bggradient-opac{
+    background-image: linear-gradient(35deg, #21d5fdb2 0%, rgba(185, 33, 255, 0.9) 100%);
+    backdrop-filter: blur(3px);
+}
+
+//STYLE POUR JS
+
+.add_green_link{
+    color: @green;
+    border-bottom: 3px solid @green;
+}
+
+.remove_green_link{
+    color:#444;
+    border-bottom:none;
+}
+
+//////////////////////////////////////////////////////STYLE/////////////////////////////////////////////////////////////////
+
+
+// HEADER
+header{
+    width: 100vw;
+    padding: 5px 0;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+    z-index: 999;
+    .header-container{
+        width: 80%;
+        margin: auto;
+        h1{
+            letter-spacing: 0.4em;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+        nav{
+            width: 60%;
+            .lien{
+                color: @white;
+                padding: 10px 20px;
+            }
+            .dl-button{
+                padding: 5px 20px;
+                border: 2px @white solid;
+                border-radius: 50px;
+            }
+        }
+    }
+    .lien:hover{
+        border-top: 2px solid @white;
+        border-bottom: 2px solid @white;
+    }
+}
+
+// TOP
+
+#top{
+    .relative{
+        position: relative;
+        padding: 0;
+    }
+    p{
+        font-size: 1.1em;
+        padding: 20px 0;
+        color: @white;
+    }
+    h1{
+        font-size: 3.5em;
+    }
+    .wave{
+        height: 95vh;
+        width: 100vw;
+        background: url("svg/wave.svg") bottom center no-repeat;
+        background-position: bottom -5px left 0px ;
+    }
+    .opac{
+        background: url("svg/wave2.svg") bottom center no-repeat;
+        background-size: 150%;
+        background-position: bottom 0 left -50px ;
+    }
+    .opac2{
+        background: url("svg/wave3.svg") top center no-repeat;
+    }
+    .iphone-mockup{
+        height: 70vh;
+    }
+    .page-button{
+        .page-button-style();
+        
+    }
+    .layer{
+        position: absolute;
+    }
+    .heart{
+        animation: emoji-animation 1.3s linear infinite;
+    }
+    .smile{
+        animation: emoji-animation 1s linear infinite;
+        right: 120px;
+    }
+    .love{
+        left: 125px;
+        animation: emoji-animation 1.8s linear infinite;
+    }
+}
+
+@keyframes emoji-animation{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -10px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+// INFO
+
+#info{
+    text-align: center;
+    width: 100vw;
+    .container{
+        height: 100%;
+    }
+    .row{
+        padding: 50px 0;
+        img {
+            transition: ease-in-out 0.3s;
+            &:hover{
+                transition: ease-in-out 0.3s;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// PRODUCT
+#product{
+    height: 60vh;
+    width: 100vw;
+    p{
+        color: @white;
+    }
+    .product-container{
+        height: 100%;
+        width: 50%;
+        margin: auto;
+        h2{
+            color: @white;
+            padding-bottom: 20px;
+        }
+    }
+    .textes{
+        height: 100%;
+        width: 40%;
+        .page-button{
+            .page-button-style();
+        }
+        .wave3{
+            height: 100%;
+            width: 100%;
+            background: url("svg/wave3.svg") top no-repeat;
+        }
+    }
+    .girl{
+        height: 100%;
+        width: 60%;
+        background-image: url("img/boy_computer.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 100% auto;
+        padding: 0;
+    }
+}
+
+//FEATURES
+
+#features{
+    h2{
+        padding-top: 50px;
+    }
+    .container{
+        text-align: center;
+    }
+    .row{
+        padding: 50px 0;
+        .carte{
+            padding: 35px 20px;
+            transition: all 0.3s;
+            border-radius: 20px;
+            &:hover{
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                transition: all 0.3s;
+            }
+        }
+        .bulle{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            box-shadow: rgba(102, 102, 102, 0.10) 20px -20px 0px -15px, rgba(102, 102, 102, 0.10) -20px 20px 0px -15px;
+            margin-bottom: 5px;
+            .speed{
+                position: relative;
+                top: -3px;
+            }
+        }
+        .trait{
+            width: 60px;
+            height: 3px;
+            background-color: @green;
+        }
+        .features-name{
+            color: @green;
+            padding: 20px 0;
+            font-size: 1.2em;
+        }
+        h5{
+            padding-top: 20px;
+            color:black;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        a{
+            color: @darkblue;
+            font-weight: bold;
+            transition: all 0.3s;
+            .arrow {
+                border: solid @darkblue;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(-45deg);
+                margin-left: 5px;
+                transition: transform 0.3s ease-in-out;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition: all 0.3s;
+                .arrow{
+                    transform: rotate(320deg);
+                }
+            }
+        }
+        p{
+            padding: 20px 0;
+        }
+    }
+}
+
+//TESTIMONIALS
+
+#testimonials{
+    color: @white;
+    height: 75vh;
+    text-align: center;
+    overflow: hidden;
+    h2{
+        color: @white;
+        padding-top: 50px;
+    }
+    h5{
+        color: @white;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-bottom: 50px;
+    }
+    p{
+        
+        color: @white;
+        padding: 20px 0;
+    }
+    .wave{
+        height: 100%;
+        width: 100%;
+        background: url("svg/Testimonials/wave.svg") bottom center no-repeat;
+        background-position: bottom -7px right 0;
+        .wave2{
+            height: 100%;
+            width: 100%;
+            background: url("svg/wave-testimonials2.svg") bottom center no-repeat;
+            background-size: 150%;
+            background-position: left -50px bottom 0px;
+            .wave3{
+                height: 100%;
+                width: 100%;
+                background: url("svg/wave3.svg") no-repeat;
+                background-position: top 0px left 0;
+            }
+        }
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+    .avis{
+        text-align: center;
+        display: none;
+        p{
+            font-size: 1.3em;
+        }
+    }
+    .avis-1{
+        display: block;
+    }
+    .profiles-pic{
+        .profil{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin: 30px 20px;
+            transition: ease-in-out 0.3s;
+        }
+        .profil:hover{
+            transform: scale(1.5);
+            transition: ease-in-out 0.3s;
+        }
+        .profil-1{
+            background: url("img/profilpic/Andrea.png") center;
+            background-size: auto 100%;
+        }
+        .profil-2{
+            background: url("img/profilpic/Elodie.png") center;
+            background-size: auto 100%;
+        }
+        .profil-3{
+            background: url("img/profilpic/Mario.png") top;
+            background-size: 100% auto;
+        }
+        .profil-4{
+            background: url("img/profilpic/Karine.png") center;
+            background-size: auto 100%;
+        }
+        .profil-5{
+            background: url("img/profilpic/Lucas.png") top center;
+            background-size: 100% auto;
+        }
+    }
+}
+
+//SCREENS
+#screens{
+    .titre-hidden{
+        display: none;
+    }
+    height: 100%;
+    #carte-1{
+        display: block;
+    }
+    .iphone-div{
+        overflow: hidden;
+        width: 304px;
+        .iphones{
+            position: relative;
+        }
+    }
+    .col-md-6{
+        padding: 0;
+    }
+    .selecteur{
+        margin-right: 25px;
+        font-size: 1.2em;
+        cursor: pointer;
+        padding-bottom: 24px;
+    }
+    .carte{
+        padding: 50px 0px;
+        display: none;
+    }  
+    .fonct{
+        padding: 20px 0;
+        padding-left: 10px;
+        h3{
+            font-size: 1.4em;
+            color: black;
+        }
+    }
+    .pad{
+        padding-bottom: 50px;
+    }
+    .trait{
+        width: 90%;
+        border-bottom: 0.3px solid #777;
+        margin-top: -2px;
+    }
+    .bulle-screens{
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        box-shadow: rgba(102, 102, 102, 0.10) 20px -20px 0px -15px, rgba(102, 102, 102, 0.10) -20px 20px 0px -15px;
+    }
+    .violet{
+        background-color:@violet;
+    }
+    .darkblue{
+        background-color:@darkblue;
+    }
+    .green{
+        background-color: @green;
+    }
+    h3{
+        font-weight: bold;
+    }
+}
+
+
+//BOT
+
+#download{
+    height: 60vh;
+    text-align: center;
+    background-image: linear-gradient(35deg, rgba(33, 213, 253, 0.9) 0%, rgba(185, 33, 255, 0.9) 100%), url("img/girl_phone.jpg");
+    p{
+        color: @white;
+    }
+    h2{
+        color: @white;
+    }
+    .wave{
+        background: url("svg/Testimonials/reverse_wave.svg") no-repeat;
+        background-position: top -5px left 0;
+        height: 100%;
+        width: 100%;
+    }
+    .liens-dl{
+        width: 70%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        img{
+            transition: ease-in-out 0.3s;
+            &:hover{
+                transition: ease-in-out 0.3s;
+                transform: scale(1.1);
+            }
+        }
+    }
+    .container{
+        padding-top: 100px;
+    }
+    .taille{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+//FOOTER
+footer{
+
+    background-color: #0d1137;
+    text-align: center;
+    color: #7a7d9e;
+    font-size: 0.8em;
+    .container{
+        width: 25%;
+    }
+    h3{
+        color: @white;
+        font-size:1.4em;
+        font-weight:bold;
+        padding: 20px 0;
+    }
+    span{
+        padding-left: 5px;
+    }
+    .icon{
+        position: relative;
+        bottom: -7px;
+    }
+    .col-md-6{
+        padding: 0;
+        padding-bottom: 50px;
+    }
+    .bottom{
+        width: 100%;
+        border-top: 0.2px solid #7a7d9e;
+        padding: 5px 0;
+        .coment{
+            letter-spacing: 0.4em;
+            padding-left: px;
+            font-weight: bold;
+        }
+            p{
+                color: #7a7d9e;
+            }
+            .icones{
+                width: 100px;
+                .res{
+                    opacity: 0.7;
+                }
+                .res:hover{
+                    opacity: 1;
+                }
+            }
+    }
+}
+
+
+
+//////////////////////////////////////////////////////RESPONSIVE///////////////////////////////////
+
+@media (max-width: 1350px){
+    #product{
+        .girl{
+            background-size: auto 100%;
+        }
+    }
+}
+
+@media (max-width: 1250px){
+    //HEADER
+    //TOP
+    #top{
+        .container{
+            padding-top: 10vh;
+        }
+        .iphone-mockup{
+            padding-left: 130px;
+        }
+        .layer{
+            display: none;
+        }
+        .page-button{
+            margin: 20px 0;
+        }
+    }
+    //INFO
+    //PRODUCT
+    #product{
+        text-align: center;
+        .girl{
+            background-size: auto 100%;
+        }
+        .product-container{
+            width: 80%;
+            align-items: center;
+        }
+    }
+    //FEATURES
+    //TESTIMONIALS
+    //SCREENS
+    #screens{
+        .container{
+            width: 100vw;
+        }
+    }
+    //DONWLOAD
+    //FOOTER
+}
+
+@media(max-width:992px){
+    //HEADER
+    //TOP
+    //INFO
+    #info{
+        .container{
+            width: 100%;
+        }
+    }
+    //PRODUCT
+    //FEATURES
+    #features{
+        .container{
+            width: 100%;
+        }
+    }
+    //TESTIMONIALS
+    //SCREENS
+    #screens{
+        .trait{
+            display: none;
+        }
+        .bulle-screens{
+            transform: scale(0.8);
+        }
+        .col-md-10{
+            padding-left: 30px;
+        }
+    }
+    //DONWLOAD
+    #download{
+        .liens-dl{
+            width: 100%;
+        }
+    }
+    //FOOTER
+}
+
+@media(max-width:767px){
+    //HEADER
+    //TOP
+    #top{
+        text-align: center;
+        .wave{
+            height: 100%;
+        }
+        .container{
+            padding-top: 15vh;
+        }
+        .iphone-mockup{
+            padding: 20px 0;
+        }
+        .col-md-6{
+            align-items: center;
+        }
+    }
+    //INFO
+    #info{
+        height: auto;
+        padding-top: 50px;
+        img{
+            padding: 20px 0px;
+        }
+    }
+    //PRODUCT
+    #product{
+        flex-direction: column !important;
+        height: auto;
+        .textes{
+            height: 100%;
+            width: 100%;
+            .product-container{
+                padding: 50px 0;
+            }
+        }
+        .girl{
+            display: none;
+        }
+
+    }
+    //FEATURES
+    #features{
+        .container{
+            padding-bottom: 20px;
+        }
+        .row{
+            padding: 0;
+        }
+    }
+    //TESTIMONIALS
+    //SCREENS
+    #screens{
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        .hidden-container{
+            width: 70%;
+            margin: auto;
+        }
+        .titre-hidden{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            display: block;
+            p{
+                padding: 0;
+            }
+        }
+        .selecteurs{
+            .selecteur{
+                margin: 0;
+            }
+            justify-content: space-between;
+        }
+        .col-md-10{
+            padding: 0;
+        }
+        .col-md-2{
+            display: flex;
+            justify-content: center;
+        }
+        .iphone-div{
+            padding-bottom: 50px;
+        }
+        .titre{
+            display: none;
+        }
+    }
+
+    //DONWLOAD
+    #download{
+        padding: 0;
+        .container{
+            padding-bottom: 30px;
+        }
+
+        .liens-dl{
+            flex-direction: column !important;
+            padding: 0;
+        }
+        img{
+            padding: 20px 0;
+        }
+    }
+
+    //FOOTER
+    footer{
+        .col-md-6{
+            padding: 0;
+        }
+        .container{
+            padding-bottom: 20px;
+            width: 70%;
+        }
+        .bot{
+            flex-direction: column !important;
+            height: 10vh;
+        }
+    }
+}
+
+
+@media only screen and (orientation:landscape){
+    //HEADER
+    //TOP
+    //INFO
+    //PRODUCT
+    //FEATURES
+    //TESTIMONIALS
+    //SCREENS
+    //DONWLOAD
+    //FOOTER
+}
